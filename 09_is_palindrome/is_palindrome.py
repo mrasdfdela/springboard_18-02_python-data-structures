@@ -21,3 +21,16 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+    forward = phrase.lower().strip()
+
+    backward = list(phrase.lower().strip())
+    backward.reverse()
+    backward = "".join(backward)
+
+    return forward == backward
+    
+print(is_palindrome('tacocat'))
+print(is_palindrome('noon'))
+print(is_palindrome('robert'))
+print(is_palindrome('taco cat'))
+print(is_palindrome('Noon'))

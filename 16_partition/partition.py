@@ -19,3 +19,21 @@ def partition(lst, fn):
         >>> partition(["hi", None, 6, "bye"], is_string)
         [['hi', 'bye'], [None, 6]]
     """
+    lst_pass = []
+    lst_fail = []
+    for el in lst:
+      lst_pass.append(el) if fn(el) else lst_fail.append(el)
+    
+    return [lst_pass, lst_fail]
+
+def is_even(num):
+  return num % 2 == 0
+
+def is_string(el):
+  return isinstance(el, str)
+
+print(partition([1, 2, 3, 4], is_even))
+# [[2, 4], [1, 3]]
+
+print(partition(["hi", None, 6, "bye"], is_string))
+# [['hi', 'bye'], [None, 6]]

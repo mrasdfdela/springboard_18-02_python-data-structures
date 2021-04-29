@@ -18,3 +18,11 @@ def repeat(phrase, num):
         >>> repeat('abc', 'nope') is None
         True
     """
+    if isinstance(phrase, str) and isinstance(num,int) and num >= 0:
+      return "".join([ phrase for el in range(num)])
+
+print(repeat('*', 3))
+print(repeat('abc', 2))
+print(repeat('abc', 0))
+print(repeat('abc', -1))
+print(repeat('abc', 'nope'))

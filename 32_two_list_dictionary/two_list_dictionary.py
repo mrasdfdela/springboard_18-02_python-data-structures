@@ -14,4 +14,10 @@ def two_list_dictionary(keys, values):
 
         >>> two_list_dictionary(['a', 'b', 'c'], [1, 2, 3, 4])
         {'a': 1, 'b': 2, 'c': 3}
-   """
+    """
+    new_dict = {}
+    for i in range(len(keys)):
+      new_dict[keys[i]] = values[i] if i < len(values) else None
+    return new_dict
+
+# takeaway: enumerate() function can be used to iterate the index and the value of the iterable

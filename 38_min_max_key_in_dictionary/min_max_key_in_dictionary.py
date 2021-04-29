@@ -9,3 +9,6 @@ def min_max_keys(d):
         >>> min_max_keys({"apple": "red", "cherry": "red", "berry": "blue"})
         ('apple', 'cherry')
     """
+    d_keys = sorted(d.keys())
+    return tuple((d_keys[0],d_keys[-1]))
+    
